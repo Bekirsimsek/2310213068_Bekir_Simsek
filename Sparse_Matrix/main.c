@@ -27,9 +27,9 @@ void printMatrix(int mat[R][C]) {
 
 int toSparse(int mat[R][C], Triple sparse[], int maxSize) {
     int nz = countNonZero(mat);
-    if (maxSize < nz + 1) return -1; // yer yok
+    if (maxSize < nz + 1) return -1; 
 
-    // header
+   
     sparse[0].row = R;
     sparse[0].col = C;
     sparse[0].val = nz;
@@ -42,11 +42,11 @@ int toSparse(int mat[R][C], Triple sparse[], int maxSize) {
             }
         }
     }
-    return k; // toplam satýr sayýsý (header dahil)
+    return k; 
 }
 
 void toNormal(Triple sparse[], int sparseSize, int out[R][C]) {
-    // sýfýrla
+   
     for (int i = 0; i < R; i++)
         for (int j = 0; j < C; j++)
             out[i][j] = 0;
